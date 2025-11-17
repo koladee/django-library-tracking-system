@@ -9,8 +9,7 @@ WORKDIR /code
 
 # Install dependencies
 COPY requirements.txt /code/
-RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
+RUN pip install --upgrade pip -r requirements.txt
 
 # Copy project
 COPY . /code/

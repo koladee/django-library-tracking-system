@@ -54,7 +54,7 @@ class LoanViewSet(viewsets.ModelViewSet):
     queryset = Loan.objects.all()
     serializer_class = LoanSerializer
 
-    @action(detail=True, method=['post'])
+    @action(detail=True, methods=['post'])
     def extend_due_date(self, request, pk=None):
         try:
             loan = Loan.objects.select_related('member__user', 'book').get(pk=pk)
